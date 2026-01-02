@@ -23,35 +23,8 @@ SEND_MINUTE = 45
 
 bot = Bot(token=TOKEN)
 
-async def send_daily_poll():
-    await bot.send_poll(
-        chat_id=CHAT_ID,
-        question="Во сколько сегодня идем какать?",
-        options=[
-            "20.30",
-            "21.00",
-            "21.15",
-            "21.30",
-            "21.45",
-            "22.00",
-            "22.15",
-            "22.30",
-            "23.00",
-            "мы не идем",
-            "мы уже"
-        ],
-        is_anonymous=False
-    )
+def main():
 
-async def main():
-    scheduler = AsyncIOScheduler(timezone=TIMEZONE)
-
-    scheduler.add_job(
-        send_daily_poll,
-        CronTrigger(hour=SEND_HOUR, minute=SEND_MINUTE)
-    )
-
-    scheduler.start()
     print("Бот запущен и ждёт время опроса...")
     print(TOKEN)
     print(CHAT_ID)
@@ -74,14 +47,13 @@ async def main():
         ],
         is_anonymous=False
     )
-    
-    # чтобы бот не завершался
-    while True:
-        await asyncio.sleep(60)
 
+    sleep(300)
+    
 if __name__ == "__main__":
 
-    asyncio.run(main())
+    run(main())
+
 
 
 
