@@ -15,7 +15,7 @@ CHAT_ID = int(os.getenv("CHAT_ID")) # id чата
 # ВРЕМЯ ОТПРАВКИ (по Москве)
 TIMEZONE = timezone(timedelta(hours=3)) # UTC+3
 SEND_HOUR = 20
-SEND_MINUTE = 30
+SEND_MINUTE = 33
 
 # ========================
 # БОТ
@@ -56,8 +56,9 @@ async def main():
 
     # чтобы бот не завершался
     while True:
-        await asyncio.sleep(1800)
+        await asyncio.sleep(60)
 
 if __name__ == "__main__":
 
     asyncio.run(main())
+
