@@ -13,9 +13,9 @@ TOKEN = os.getenv("TOKEN") # токен бота
 CHAT_ID = int(os.getenv("CHAT_ID")) # id чата
 
 # ВРЕМЯ ОТПРАВКИ (по Москве)
-TIMEZONE = timezone(timedelta(hours=3)) # UTC+3
-SEND_HOUR = 20
-SEND_MINUTE = 33
+TIMEZONE = timezone(timedelta(hours=5)) # UTC+3
+SEND_HOUR = 22
+SEND_MINUTE = 40
 
 # ========================
 # БОТ
@@ -61,4 +61,5 @@ async def main():
 if __name__ == "__main__":
 
     asyncio.run(main())
+
 
