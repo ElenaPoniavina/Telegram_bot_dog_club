@@ -56,6 +56,25 @@ async def main():
     print(TOKEN)
     print(CHAT_ID)
 
+    bot.send_poll(
+        chat_id=CHAT_ID,
+        question="Во сколько сегодня идем какать?",
+        options=[
+            "20.30",
+            "21.00",
+            "21.15",
+            "21.30",
+            "21.45",
+            "22.00",
+            "22.15",
+            "22.30",
+            "23.00",
+            "мы не идем",
+            "мы уже"
+        ],
+        is_anonymous=False
+    )
+    
     # чтобы бот не завершался
     while True:
         await asyncio.sleep(60)
@@ -63,6 +82,7 @@ async def main():
 if __name__ == "__main__":
 
     asyncio.run(main())
+
 
 
 
