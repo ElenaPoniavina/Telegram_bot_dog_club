@@ -1,5 +1,6 @@
 import os
 import asyncio
+import time
 from telegram import Bot
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from apscheduler.triggers.cron import CronTrigger
@@ -24,7 +25,6 @@ SEND_MINUTE = 45
 bot = Bot(token=TOKEN)
 
 def main():
-
     print("Бот запущен и ждёт время опроса...")
     print(TOKEN)
     print(CHAT_ID)
@@ -48,11 +48,12 @@ def main():
         is_anonymous=False
     )
 
-    sleep(300)
+    time.sleep(300)
     
 if __name__ == "__main__":
 
     main()
+
 
 
 
